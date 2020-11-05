@@ -57,7 +57,7 @@ router.patch('/', auth,
       });
       return newObj;
     };
-    // 2) Filtered out unwanted fields names that are not allowed to be updated
+    
     try {
     const body = JSON.parse(req.body.body);
 
@@ -91,7 +91,7 @@ router.patch('/', auth,
       filteredBody.password = await bcrypt.hash(password, salt);
     }
 
-    // 3) Update user document
+    
     const updatedUser = await User.findByIdAndUpdate(req.user.id, filteredBody, {
       new: true,
       runValidators: true

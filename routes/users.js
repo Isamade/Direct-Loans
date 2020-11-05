@@ -97,21 +97,3 @@ router.post(
 
 module.exports = router;
 
-/*router.get('/', async (req, res) => {
-  try {
-    let users;
-    if(req.query){
-      users = await User.find({
-        $text: {
-          $search: `${req.query["search"]}`
-        }
-      }).select('-password');
-    } else {
-      users = await User.find().select('-password');
-    }
-    res.json(users);
-  } catch (err) {
-    console.error(err.message);
-    res.status(500).send('Server Error');
-  }
-}); */
